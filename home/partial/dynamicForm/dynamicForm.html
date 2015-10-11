@@ -1,0 +1,39 @@
+<div class="col-md-12" ng-controller="DynamicformCtrl">
+    <div class="panel panel-info">
+        <div class="panel-heading text-center">
+            <h3>Dynamic Form</h3>
+        </div>
+        <div class="panel-body">
+            <form name="dynamicform" class="form-horizontal" ng-submit="form.saveForm(dynamicform.$valid)" novalidate>
+                <div class="form-group">
+                    <label for="inputEmail1" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="form.firstName" id="inputEmail1" placeholder="First  Name" ng-required="true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail2" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="form.lastName" class="form-control" id="inputEmail2" placeholder="Last  Name" ng-required="true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" ng-model="form.email" class="form-control" id="inputEmail3" placeholder="Email" ng-required="true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail4" class="col-sm-2 control-label">Age</label>
+                    <div class="col-sm-6">
+                        <input type="number" ng-model="form.age" class="form-control" id="inputEmail4" placeholder="age" ng-required="true" required>
+                    </div>
+                </div>
+                <div class="col-sm-10 text-center">
+                    <button type="submit" class="btn btn-success btn-sm" ng-disabled="!form.firstName || !form.lastName || !form.email || !form.age">Submit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

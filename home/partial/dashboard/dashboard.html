@@ -1,0 +1,60 @@
+<div class="col-md-12" ng-controller="DashboardCtrl">
+
+    <div class="panel panel-primary" style="margin-top:50px">
+        <div class="panel-heading text-center">
+            Customer
+        </div>
+        <div class="panel-body">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="input1" class="col-sm-3 control-label">Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" ng-model="form.firstName" class="form-control" id="input1" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input2" class="col-sm-4 control-label">Last Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" ng-model="form.lastName" class="form-control" id="input2" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input3" class="col-sm-3 control-label">City</label>
+                    <div class="col-sm-4">
+                        <input type="text" ng-model="form.cityName" class="form-control" id="input3" placeholder="City">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-sm-12 text-center top-gap">
+                    <button class="btn btn-primary text-center" ng-click="getFormData()" ng-disabled="!form.firstName || !form.lastName || !form.cityName">Add Customer</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <a ui-sref="griddetail" class="btn btn-primary btn-sm">Show Grid Details</a>
+    <div class="clearfix"></div>
+    <div class="col-sm-3 top-gap" ng-repeat="item in customers">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+
+                {{item.firstName}} {{item.lastName}}
+                <button class="btn btn-primary btn-xs pull-right" ng-click="deleteCustomer(item.id)"><i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="panel-body">
+                <div class="text-danger">{{item.city}}</div>
+                <div class="text-primary">
+                    <a ui-sref="ordercontrol({id:item.id})" class="text-info">View {{item.orders.length}} Details</a>
+                </div>
+                <div class="text-danger">
+                    <button class="btn btn-sm btn-primary" ng-click="updateInfo($index)">Update Value</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+    <document-upload get-data="showData"></document-upload>
+</div>

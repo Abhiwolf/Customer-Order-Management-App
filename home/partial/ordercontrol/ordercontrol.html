@@ -1,0 +1,29 @@
+<div class="col-md-12" ng-controller="OrdercontrolCtrl">
+    <h1 class="text-center">Customers Orders</h1>
+    <h4 class="">Orders For {{userCustomer.firstName}}&nbsp;{{userCustomer.lastName}}</h4> {{userCustomer.address}}
+    </br>
+    {{userCustomer.city}}
+    </br>
+    <div class="row">
+        <div class="col-sm-10">
+            <table class="table table-bordered">
+                <thead>
+                    <tr ng-show="userCustomer.orders" class="bg-success">
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in userCustomer.orders">
+                        <td>{{item.product}}</td>
+                        <td>{{item.quantity }}</td>
+                        <td>{{item.price | currency }}</td>
+                        <td>{{item.orderTotal | currency }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
