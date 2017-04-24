@@ -1,4 +1,4 @@
-angular.module('home', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'ui.grid',
+angular.module('home', ['ui.bootstrap', 'ui.router', 'ngAnimate', 'ui.grid',
     'ui.grid.resizeColumns',
     'ui.grid.moveColumns', 'ui.grid.autoResize',
     'ui.grid.saveState',
